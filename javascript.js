@@ -13,12 +13,18 @@ function pword() {
     // Prompt the user to pick character count, do not allow < 8 or > 128, then ask about other criteria
 
     prompt("Enter password length from 8 to 128");
+// display a random index the number of times of the input, only accepting 8-128
 
     confirm("Will the password contain special characters?");
+// if this is confirmed include random indexes from spec variable
 
     confirm("Numbers?");
+// if this is confirmed include random indexes from the nums variable
 
     confirm("Capital letters?");
+    // if this is confirmed include random indexes from the charCaps variable
+
+    // display a string pulling from the selected variable indexes, always including the char index
     
     
 
