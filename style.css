@@ -1,22 +1,39 @@
 body {
     background-color: black;
-    
-    
+  
 }
 
-.row {
+.container {
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.ptitle {
+    color: white;
+}
+
+.card {
+    background: black;
+    color: lime;
+    border: solid 1px transparent;
+    border-color: #007bff;
     display: flex;
     justify-content: center;
+    max-height: 1200px;
+    max-width: 600px;
     margin: auto;
-    margin-top: 50%;
-      
+    margin-top: 50px;
+    padding-bottom: 50px;
+    font-size: 24px;
 }
 
-.col-md-12 {
-    display:flex;
-    justify-content: center;
-    margin: auto;
-    
+button {
+    position: static;
+    bottom: 0;
+    left: 50;
+    max-width: 400px;
+    margin-top: 30px;
 }
 
 /* Change the margins for smaller viewports*/
