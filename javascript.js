@@ -8,29 +8,38 @@ var options = {
     spec: ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "`", "{", "|", "}", "~"],
 }
 
+// Where to store the prompted variables
+var length;
+var special;
+var numbers;
+var caps;
+
 
 function pword() {
     // Prompt the user to pick character count, do not allow < 8 or > 128, then ask about other criteria
 
     length = prompt("Enter password length from 8 to 128");
 // display a random index the number of times of the input, only accepting 8-128
-    if (length < 8 || length > 128)
-    return alert("Password length must be between 8 and 128 characters")
+    if (length < 8 || length > 128 || isNaN(length)===true)
+    return alert("Password length must be a number between 8 and 128")
 
 
+    // Ask the user if they want special characters
     special = confirm("Will the password contain special characters?");
 // if this is confirmed include random indexes from spec variable
 
+    // Ask the user if they want numbers
     numbers = confirm("Numbers?");
 // if this is confirmed include random indexes from the nums variable
 
+    // Ask the user if they want capital letters
     caps = confirm("Capital letters?");
     // if this is confirmed include random indexes from the charCaps variable
 
     // display a string pulling from the selected variable indexes, always including the char index
 
     // Prompt the user to select at least one variable if none are selected
-    if ( special == false && numbers == false && caps == false)
+    if (special == false && numbers == false && caps == false)
         return alert("Please choose at least one type of character to include.");
     
     
