@@ -1,10 +1,14 @@
 body {
     background-color: black;
+    
+    
 }
 
 .row {
-    height: 100%;
-    width: 100%;    
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50%;
       
 }
 
@@ -12,5 +16,7 @@ body {
     display:flex;
     justify-content: center;
     margin: auto;
-    margin-top: 35%
+    
 }
+
+/* Change the margins for smaller viewports*/
