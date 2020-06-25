@@ -23,33 +23,29 @@ var lower;
     // Prompt the user, on click, to pick character count, do not allow < 8 or > 128, then ask about other criteria
 
     pLength = prompt("Enter password length from 8 to 128");
-    // display a random index the number of times of the input, only accepting 8-128
+
     if (pLength < 8 || pLength > 128 || isNaN(pLength) === true)
     return alert("Password length must be a number between 8 and 128")
 
 
     // Ask the user if they want special characters
     special = confirm("Will the password contain special characters?");
-    // if this is confirmed include random indexes from spec variable
 
     // Ask the user if they want numbers
     numbers = confirm("Numbers?");
-    // if this is confirmed include random indexes from the nums variable
 
     // Ask the user if they want capital letters
     caps = confirm("Capital letters?");
-    // if this is confirmed include random indexes from the charCaps variable
-
 
     // Ask the user if they want lowercase letters
     lower = confirm("Lowercase letters?");
-    // if this is confirmed include random indexes from the char variable
 
     // Prompt the user to select at least one variable if none are selected
     if (special == false && numbers == false && caps == false)
         return alert("Please choose at least one type of character to include.");
 
-     // Generate the password
+
+// Generate the password
 
 // The generated password variables to call for the final string
 var password = "";
@@ -58,7 +54,7 @@ var pNums;
 var pCharCaps;
 var pChar;
 
-    // If special characters were selected, choose a random special character
+    // If special characters were selected, choose a random special character to add to the resulting password
     if (special === true) {
         for (i = 0; i < pLength; i++) {
             pSpec = options.spec[Math.floor(Math.random() * options.spec.length)];
@@ -82,16 +78,15 @@ var pChar;
         }  
     }
 
-    // Add random lower case letters
+    // If the user chose to add random lowercase letters, add random lowercase letters
     if (lower === true) {
         for (i = 0; i < pLength; i++) {
             pChar = options.char[Math.floor(Math.random() * options.char.length)];
             password += pChar;
         }  
     }
-    
- 
-    // display a string pulling from the selected variable indexes, always including the char index
+
+    // Display, in the "your new password" card on the html page, a string pulling from the selected variable indexes, always including the char index
     var pbox = document.getElementById("pbox");
     pbox.innerHTML = password;
 
