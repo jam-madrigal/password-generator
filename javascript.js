@@ -9,39 +9,65 @@ var options = {
 }
 
 // Where to store the prompted variables
-var length;
+var pLength;
 var special;
 var numbers;
 var caps;
 
+// The generated password
+var password = "";
+var pspec;
+var pnums;
+var pcharCaps;
+var pchar;
 
-function pword() {
-    // Prompt the user to pick character count, do not allow < 8 or > 128, then ask about other criteria
 
-    length = prompt("Enter password length from 8 to 128");
-// display a random index the number of times of the input, only accepting 8-128
-    if (length < 8 || length > 128 || isNaN(length)===true)
+function pwordCriteria() {
+    // Prompt the user, on click, to pick character count, do not allow < 8 or > 128, then ask about other criteria
+
+    pLength = prompt("Enter password length from 8 to 128");
+    // display a random index the number of times of the input, only accepting 8-128
+    if (pLength < 8 || pLength > 128 || isNaN(pLength) === true)
     return alert("Password length must be a number between 8 and 128")
 
 
     // Ask the user if they want special characters
     special = confirm("Will the password contain special characters?");
-// if this is confirmed include random indexes from spec variable
+    // if this is confirmed include random indexes from spec variable
 
     // Ask the user if they want numbers
     numbers = confirm("Numbers?");
-// if this is confirmed include random indexes from the nums variable
+    // if this is confirmed include random indexes from the nums variable
 
     // Ask the user if they want capital letters
     caps = confirm("Capital letters?");
     // if this is confirmed include random indexes from the charCaps variable
 
-    // display a string pulling from the selected variable indexes, always including the char index
-
     // Prompt the user to select at least one variable if none are selected
     if (special == false && numbers == false && caps == false)
         return alert("Please choose at least one type of character to include.");
+
+     // Generate the password
+
+    // If special characters were selected, choose a random special character
+    if (special === true) {
+        for (i = 0; i < pLength.length; i++) {
+            Math.floor(Math.random() * options.spec * pLength);
+            password += pspec;
     
+        }   
+    }
+ 
     
+    var pbox = document.getElementById("pbox");
+    pbox.innerHTML = password;
+
 
 }
+
+
+
+    
+
+// display a string pulling from the selected variable indexes, always including the char index
+
