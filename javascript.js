@@ -8,18 +8,7 @@ var options = {
     spec: ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "`", "{", "|", "}", "~"],
 }
 
-// Where to store the prompted variables
-var pLength;
-var special;
-var numbers;
-var caps;
 
-// The generated password
-var password = "";
-var pspec;
-var pnums;
-var pcharCaps;
-var pchar;
 
 
 function pwordCriteria() {
@@ -48,17 +37,30 @@ function pwordCriteria() {
         return alert("Please choose at least one type of character to include.");
 
      // Generate the password
+     // Where to store the prompted variables
+var pLength;
+var special;
+var numbers;
+var caps;
+
+// The generated password
+var password = "";
+var pSpec;
+var pNums;
+var pCharCaps;
+var pChar;
 
     // If special characters were selected, choose a random special character
     if (special === true) {
-        for (i = 0; i < pLength.length; i++) {
-            Math.floor(Math.random() * options.spec * pLength);
-            password += pspec;
+        for (i = 0; i < pLength; i++) {
+            pSpec = options.spec[Math.floor(Math.random() * pLength)];
+            password += pSpec;
     
         }   
     }
  
-    
+
+    // display a string pulling from the selected variable indexes, always including the char index
     var pbox = document.getElementById("pbox");
     pbox.innerHTML = password;
 
@@ -69,5 +71,5 @@ function pwordCriteria() {
 
     
 
-// display a string pulling from the selected variable indexes, always including the char index
+
 
