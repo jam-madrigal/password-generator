@@ -48,25 +48,26 @@ var lower;
 // Generate the password
 
 // The generated password variables to call for the final string
+var passwordArray = [];
 var password = "";
 var pSpec;
 var pNums;
 var pCharCaps;
 var pChar;
 
-    // If special characters were selected, choose a random special character to add to the resulting password
+    // If special characters were selected, choose a random special character to add to the resulting password, storing the result of each selected function in an array to pull from later
     if (special === true) {
         for (i = 0; i < pLength; i++) {
             pSpec = options.spec[Math.floor(Math.random() * options.spec.length)];
-            password += pSpec;
+            passwordArray += pSpec;
         }       
     }
 
-    // IF the user chose to include numbers, add random numbers
+    // If the user chose to include numbers, add random numbers
     if (numbers === true) {
         for (i = 0; i < pLength; i++) {
             pNums = options.nums[Math.floor(Math.random() * options.nums.length)];
-            password += pNums;
+            passwordArray += pNums;
         }  
     }
 
@@ -74,7 +75,7 @@ var pChar;
     if (caps === true) {
         for (i = 0; i < pLength; i++) {
             pCharCaps = options.charCaps[Math.floor(Math.random() * options.charCaps.length)];
-            password += pCharCaps;
+            passwordArray += pCharCaps;
         }  
     }
 
@@ -82,13 +83,20 @@ var pChar;
     if (lower === true) {
         for (i = 0; i < pLength; i++) {
             pChar = options.char[Math.floor(Math.random() * options.char.length)];
-            password += pChar;
+            passwordArray += pChar;
         }  
+    }
+
+    
+    // Randomize the password from pLength characters after storing it an array
+    if (pLength > 0) {
+        for (i = 0; i < pLength; i++) {
+            password += passwordArray[Math.floor(Math.random() * passwordArray.length + pLength)];
+        } 
     }
 
     // Display, in the "your new password" card on the html page, a string pulling from the selected variable indexes, always including the char index
     var pbox = document.getElementById("pbox");
     pbox.innerHTML = password;
-
 }
 
