@@ -9,7 +9,11 @@ var options = {
 }
 
 
-
+ // Where to store the prompted variables
+ var pLength;
+ var special;
+ var numbers;
+ var caps;
 
 function pwordCriteria() {
     // Prompt the user, on click, to pick character count, do not allow < 8 or > 128, then ask about other criteria
@@ -37,13 +41,8 @@ function pwordCriteria() {
         return alert("Please choose at least one type of character to include.");
 
      // Generate the password
-     // Where to store the prompted variables
-var pLength;
-var special;
-var numbers;
-var caps;
 
-// The generated password
+// The generated password variables to call for the final string
 var password = "";
 var pSpec;
 var pNums;
@@ -53,7 +52,7 @@ var pChar;
     // If special characters were selected, choose a random special character
     if (special === true) {
         for (i = 0; i < pLength; i++) {
-            pSpec = options.spec[Math.floor(Math.random() * pLength)];
+            pSpec = options.spec[Math.floor(Math.random() * pLength + 1)];
             password += pSpec;
     
         }   
