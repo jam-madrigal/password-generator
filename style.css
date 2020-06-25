@@ -10,14 +10,14 @@ body {
 }
 
 .ptitle {
-    color: white;
+    color: lime;
 }
 
 .card {
     background: black;
     color: lime;
     border: solid 1px transparent;
-    border-color: #007bff;
+    border-color: lime;
     display: flex;
     justify-content: center;
     max-height: 1200px;
