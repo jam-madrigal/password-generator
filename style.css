@@ -1,6 +1,6 @@
 body {
     background-color: black;
-  
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .container {
@@ -34,10 +34,11 @@ button {
     left: 50;
     max-width: 400px;
     margin-top: 30px;
+    color: lime;
 }
 
 #butt {
     background-color: black; 
     border-color: lime; 
-    color: lime;" 
+    color: lime;
 }
