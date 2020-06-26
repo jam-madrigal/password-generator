@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/65047802/85808448-bbb4d300-b709-11ea-8024-83371178a407.png)
+
 # The task at hand
 
 Create a password generator. The password generator should prompt the user to create a secure password. On clicking a button the user will be asked if they want certain criteria to be included in the password. These criteria are as follows:
