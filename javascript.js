@@ -41,7 +41,7 @@ var lower;
     lower = confirm("Lowercase letters?");
 
     // Prompt the user to select at least one variable if none are selected
-    if (special == false && numbers == false && caps == false)
+    if (special == false && numbers == false && caps == false && lower === false)
         return alert("Please choose at least one type of character to include.");
 
 
