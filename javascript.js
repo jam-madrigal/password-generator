@@ -90,15 +90,13 @@ let pChar;
     };
 
     
-    // Randomize the password from pLength characters after storing it an array
-    if (pLength > 0) {
-        for (let i = 0; i < pLength; i++) {
-            password += passwordArray[Math.floor(Math.random() * passwordArray.length + pLength)];
-        } 
+    // Randomize the password from pLength characters after storing each of its possible characters in an array   
+    for (let i = 0; i < pLength; i++) {
+        password += passwordArray[Math.floor(Math.random() * passwordArray.length + pLength)];
     };
-
     // Display, in the "your new password" card on the html page, a string pulling from the selected variable indexes, always including the char index
     const pbox = document.getElementById("pbox");
     pbox.innerHTML = password;
-}
+
+};
 
